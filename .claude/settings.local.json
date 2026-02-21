@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uvicorn src.main:app --reload --port 8000:*)"
+    ]
+  }
+}

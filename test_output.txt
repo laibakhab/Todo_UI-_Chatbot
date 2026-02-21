@@ -1,0 +1,3 @@
+﻿DEBUG: SQLModel.metadata.tables keys: ['user', 'task', 'conversation', 'message']
+DEBUG: User table exists.
+Sending request to /api/1/chat...
