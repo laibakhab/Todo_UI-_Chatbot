@@ -22,7 +22,7 @@ def create_tables():
     from src.models.task import Task, TaskBase, TaskCreate, TaskUpdate, TaskPublic
     from src.models.chat_models import Conversation, Message, ConversationCreate, ConversationPublic, MessageCreate, MessagePublic
 
-    print("Creating database tables...")
+    print("Creating database tables...")                         
     SQLModel.metadata.create_all(engine)
     print("Database tables created successfully!")
 
