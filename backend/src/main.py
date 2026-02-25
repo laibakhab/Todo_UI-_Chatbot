@@ -12,7 +12,7 @@ app = FastAPI(title="Todo API", version="1.0.0")
 # CORS middleware to allow frontend requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "http://localhost:3004"],  # Allow specific frontend origins
+    allow_origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "http://localhost:3004", "https://frontend-six-swart-57.vercel.app/"],  # Allow specific frontend origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

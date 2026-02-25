@@ -106,7 +106,7 @@ def test_complete_flow():
     print("\n=== All tests passed! Chatbot is working correctly! ===")
     print("\nThe system is ready for use:")
     print("- Backend server running on http://localhost:8000")
-    print("- Frontend server running on http://localhost:3000 (typically)")
+    print("- Frontend server running on http://localhost:3000   (typically)")
     print("- Users can register/login and interact with the chatbot")
     print("- Tasks can be added, listed, updated, and completed via chat")
     return True
