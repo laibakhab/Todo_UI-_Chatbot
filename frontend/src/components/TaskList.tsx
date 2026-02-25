@@ -28,7 +28,7 @@ export default function TaskList() {
       if (!token) {
         throw new Error('No authentication token found');
       }
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://laibaasif-chatbot.hf.space';
 
       const response = await fetch(`${apiUrl}/api/tasks`, {
         headers: {

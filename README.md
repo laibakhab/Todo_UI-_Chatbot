@@ -96,7 +96,7 @@ This is a full-stack Todo application with an AI chatbot that allows users to ma
 ## Development
 
 For development, both servers should be running simultaneously:
-- Backend: `http://localhost:8000`
+- Backend: `https://laibaasif-chatbot.hf.space`
 - Frontend: `http://localhost:3000`
 
 The frontend is configured to proxy API requests from `/api/*` to the backend server.

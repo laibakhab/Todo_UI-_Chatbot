@@ -7,7 +7,7 @@ import requests
 import json
 from datetime import datetime
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://laibaasif-chatbot.hf.space"
 
 def test_backend_connectivity():
     """Test if the backend server is running and accessible."""

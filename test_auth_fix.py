@@ -12,7 +12,7 @@ def test_authentication_fix():
     # Start by testing health
     print("1. Testing backend health...")
     try:
-        response = requests.get("http://localhost:8000/health")
+        response = requests.get("https://laibaasif-chatbot.hf.space/health")
         if response.status_code == 200:
             print("   [OK] Backend is healthy")
         else:
@@ -31,7 +31,7 @@ def test_authentication_fix():
     }
     
     try:
-        response = requests.post("http://localhost:8000/api/auth/signup", json=signup_payload)
+        response = requests.post("https://laibaasif-chatbot.hf.space/api/auth/signup", json=signup_payload)
         if response.status_code == 200:
             auth_data = response.json()
             print(f"   [OK] User registered successfully (ID: {auth_data['user_id']})")
@@ -51,7 +51,7 @@ def test_authentication_fix():
     }
     
     try:
-        response = requests.post("http://localhost:8000/api/auth/signin", json=signin_payload)
+        response = requests.post("https://laibaasif-chatbot.hf.space/api/auth/signin", json=signin_payload)
         if response.status_code == 200:
             auth_data = response.json()
             print(f"   [OK] Login successful (ID: {auth_data['user_id']})")
@@ -70,7 +70,7 @@ def test_authentication_fix():
     }
     
     try:
-        response = requests.post("http://localhost:8000/api/auth/signin", json=wrong_signin_payload)
+        response = requests.post("https://laibaasif-chatbot.hf.space/api/auth/signin", json=wrong_signin_payload)
         if response.status_code == 401:
             print("   [OK] Login correctly failed with wrong password")
         else:
@@ -88,7 +88,7 @@ def test_authentication_fix():
     }
     
     try:
-        response = requests.post("http://localhost:8000/api/auth/signin", json=fake_signin_payload)
+        response = requests.post("https://laibaasif-chatbot.hf.space/api/auth/signin", json=fake_signin_payload)
         if response.status_code == 401:
             print("   [OK] Login correctly failed with non-existent email")
         else:
@@ -106,7 +106,7 @@ def test_authentication_fix():
     }
     
     try:
-        response = requests.get("http://localhost:8000/api/tasks/", headers=headers)
+        response = requests.get("https://laibaasif-chatbot.hf.space/api/tasks/", headers=headers)
         if response.status_code == 200:
             print("   [OK] Successfully accessed protected endpoint with token")
         else:

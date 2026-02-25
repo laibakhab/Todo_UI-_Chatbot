@@ -9,7 +9,7 @@ import time
 def test_backend_health():
     """Test if the backend is running and healthy."""
     try:
-        response = requests.get("http://localhost:8000/health")
+        response = requests.get("https://laibaasif-chatbot.hf.space/health")
         if response.status_code == 200:
             print("[OK] Backend is running and healthy:", response.json())
             return True
@@ -23,7 +23,7 @@ def test_backend_health():
 def test_root_endpoint():
     """Test the root endpoint."""
     try:
-        response = requests.get("http://localhost:8000/")
+        response = requests.get("https://laibaasif-chatbot.hf.space/")
         if response.status_code == 200:
             print("[OK] Root endpoint is working:", response.json())
             return True
@@ -42,7 +42,7 @@ def test_auth_endpoints():
             "email": f"testuser_{int(time.time())}@example.com",
             "password": "securepassword123"
         }
-        response = requests.post("http://localhost:8000/api/auth/signup", json=signup_payload)
+        response = requests.post("https://laibaasif-chatbot.hf.space/api/auth/signup", json=signup_payload)
         if response.status_code in [200, 400]:  # 400 might mean user already exists
             print("[OK] Auth endpoints are accessible")
             if response.status_code == 200:
@@ -78,7 +78,7 @@ def main():
         print("\n[SUCCESS] All tests passed! The chatbot backend is working correctly.")
         print("\nYou can now:")
         print("- Access the frontend at http://localhost:3000")
-        print("- Use the API endpoints at http://localhost:8000/api/")
+        print("- Use the API endpoints at https://laibaasif-chatbot.hf.space/api/")
         print("- Register/login users at /api/auth/signup and /api/auth/signin")
         print("- Interact with tasks at /api/tasks/")
         print("- Use the chatbot at /api/{user_id}/chat")

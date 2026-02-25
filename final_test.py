@@ -12,7 +12,7 @@ def test_complete_flow():
     # Test 1: Health check
     print("1. Testing backend health...")
     try:
-        response = requests.get("http://localhost:8000/health")
+        response = requests.get("https://laibaasif-chatbot.hf.space/health")
         if response.status_code == 200:
             print("   [OK] Backend is healthy")
         else:
@@ -31,7 +31,7 @@ def test_complete_flow():
     }
     
     try:
-        response = requests.post("http://localhost:8000/api/auth/signup", json=signup_payload)
+        response = requests.post("https://laibaasif-chatbot.hf.space/api/auth/signup", json=signup_payload)
         if response.status_code == 200:
             auth_data = response.json()
             token = auth_data['access_token']
@@ -57,7 +57,7 @@ def test_complete_flow():
     }
     
     try:
-        response = requests.post(f"http://localhost:8000/api/{user_id}/chat", json=chat_payload, headers=headers)
+        response = requests.post(f"https://laibaasif-chatbot.hf.space/api/{user_id}/chat", json=chat_payload, headers=headers)
         if response.status_code == 200:
             chat_response = response.json()
             print(f"   [OK] Chat response received: {chat_response['response']}")
@@ -72,7 +72,7 @@ def test_complete_flow():
     # Test 4: Test listing tasks
     print("\n4. Testing task listing...")
     try:
-        response = requests.get(f"http://localhost:8000/api/tasks/", headers=headers)
+        response = requests.get(f"https://laibaasif-chatbot.hf.space/api/tasks/", headers=headers)
         if response.status_code == 200:
             tasks = response.json()
             print(f"   [OK] Retrieved {len(tasks)} tasks")
@@ -92,7 +92,7 @@ def test_complete_flow():
     }
     
     try:
-        response = requests.post(f"http://localhost:8000/api/{user_id}/chat", json=chat_payload, headers=headers)
+        response = requests.post(f"https://laibaasif-chatbot.hf.space/api/{user_id}/chat", json=chat_payload, headers=headers)
         if response.status_code == 200:
             chat_response = response.json()
             print(f"   [OK] Chat response received: {chat_response['response']}")
@@ -105,7 +105,7 @@ def test_complete_flow():
     
     print("\n=== All tests passed! Chatbot is working correctly! ===")
     print("\nThe system is ready for use:")
-    print("- Backend server running on http://localhost:8000")
+    print("- Backend server running on https://laibaasif-chatbot.hf.space")
     print("- Frontend server running on http://localhost:3000   (typically)")
     print("- Users can register/login and interact with the chatbot")
     print("- Tasks can be added, listed, updated, and completed via chat")

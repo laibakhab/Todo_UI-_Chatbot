@@ -2,7 +2,7 @@ import requests
 import os
 
 # Test the login endpoint
-api_url = os.getenv('NEXT_PUBLIC_API_URL', 'http://localhost:8000')
+api_url = os.getenv('NEXT_PUBLIC_API_URL', 'https://laibaasif-chatbot.hf.space')
 
 # Register a new user first
 register_data = {

@@ -13,7 +13,7 @@ The Todo API uses JWT (JSON Web Tokens) for authentication. All protected endpoi
 To register a new user, send a POST request to the `/api/auth/signup` endpoint:
 
 ```bash
-curl -X POST "http://localhost:8000/api/auth/signup" \
+curl -X POST "https://laibaasif-chatbot.hf.space/api/auth/signup" \
   -H "Content-Type: application/json" \
   -d '{
     "email": "your-email@example.com",
@@ -37,7 +37,7 @@ Response:
 To log in with existing credentials, send a POST request to the `/api/auth/signin` endpoint:
 
 ```bash
-curl -X POST "http://localhost:8000/api/auth/signin" \
+curl -X POST "https://laibaasif-chatbot.hf.space/api/auth/signin" \
   -H "Content-Type: application/json" \
   -d '{
     "email": "your-email@example.com",
@@ -61,7 +61,7 @@ Response:
 Once you have an access token, include it in the `Authorization` header for all protected endpoints:
 
 ```bash
-curl -X GET "http://localhost:8000/api/tasks/" \
+curl -X GET "https://laibaasif-chatbot.hf.space/api/tasks/" \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
   -H "Content-Type: application/json"
 ```
@@ -118,7 +118,7 @@ Access tokens expire after 30 minutes by default. When a token expires, you'll n
 ```javascript
 // Login and store token
 async function login(email, password) {
-  const response = await fetch('http://localhost:8000/api/auth/signin', {
+  const response = await fetch('https://laibaasif-chatbot.hf.space/api/auth/signin', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ async function login(email, password) {
 // Use token for authenticated requests
 async function getTasks() {
   const token = localStorage.getItem('access_token');
-  const response = await fetch('http://localhost:8000/api/tasks/', {
+  const response = await fetch('https://laibaasif-chatbot.hf.space/api/tasks/', {
     headers: {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'

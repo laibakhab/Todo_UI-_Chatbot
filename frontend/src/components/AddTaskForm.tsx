@@ -38,7 +38,7 @@ export default function AddTaskForm({ onTaskAdded }: AddTaskFormProps) {
       if (!token) {
         throw new Error('No authentication token found. Please log in.');
       }
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://laibaasif-chatbot.hf.space';
 
       const response = await fetch(`${apiUrl}/api/tasks`, {
         method: 'POST',

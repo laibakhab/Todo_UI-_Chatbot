@@ -41,7 +41,7 @@ try:
         
         # Test basic connectivity
         try:
-            response = requests.get("http://localhost:8000/health", timeout=5)
+            response = requests.get("https://laibaasif-chatbot.hf.space/health", timeout=5)
             print(f"Health check: {response.status_code}, {response.json()}")
         except Exception as e:
             print(f"Health check failed: {e}")

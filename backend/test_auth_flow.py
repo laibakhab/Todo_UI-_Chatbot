@@ -14,7 +14,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 # Configuration
-BASE_URL = "http://localhost:8000"  # Adjust this to your API server URL
+BASE_URL = "https://laibaasif-chatbot.hf.space"  # Adjust this to your API server URL
 TEST_EMAIL = f"testuser_{int(datetime.now().timestamp())}@example.com"
 TEST_PASSWORD = "securepassword123"
 
